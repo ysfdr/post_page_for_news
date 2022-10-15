@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>Post Page</title>
+  <style>
+    .main-row {
+      height: 100vh !important;
+    }
+    .main-row-con-1 {
+      height: 20% !important;
+      background-color: #F74F38;
+      align-items: center;
+    }
+    .can-con-link {
+      width: 100%;
+      height: 70px;
+      padding-left: 10px;
+      background-color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+    .can-con-link:hover {
+      background-color: #F74F38;
+      color: white;
+    }
+    .can-ara-con {
+      height: 50px !important;
+    }
+    .nav-con>a {
+      font-size: 1.2rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+    }
+    .nav-con>a:hover {
+      border-bottom: #fff solid 1px;
+    }
+    .ara-con>a {
+      text-decoration: none;
+    }
+    .ara-con>a>.buton {
+      margin-left: 0;
+      border: 0.2px solid rgba(106, 106, 106, 0.788);
+      margin-top: 0px;
+      background-color: #fff;
+      height: 100% !important;
+    }
+    .ara-con>a>.buton:hover {
+      transition: .4s;
+      background-color: #fbc7c7;
+      fill: white;
+    }
+    .buton-giris:hover {
+      cursor: pointer;
+      background-color: #f12c2c;
+    }
+    .svg-con {
+      width: 60px;
+      height: 100%;
+    }
+    .svg-con>a>svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    .svg-con>a {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      color: rgb(255, 255, 255);
+    } 
+    .carousel-control-next,
+    .carousel-control-prev {
+      width: 5%;
+      z-index: 10;
+      background-color: #00000000 !important;
+      opacity: .5 !important;
+    }
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      z-index: 10;
+      background-color: #161515 !important;
+      opacity: 1 !important;
+    }
+    .carousel-control-next:hover,
+    .carousel-control-prev:hover {
+      width: 5%;
+      z-index: 10;
+    }
+    .carousel-control-next:active,
+    .carousel-control-prev:active {
+      width: 4%;
+      z-index: 10;
+      opacity: 1 !important;
+    }
+    .caro-img-con>.card {
+      box-shadow: -5px 5px 8px rgba(0, 0, 0, 0.5);
+      transition: .2s;
+    }
+    .caro-img-con>.card:hover {
+      cursor: pointer;
+      scale: 1.1;
+      box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+    }
+    .footer-con {
+      background-color: black;
+      height: auto;
+      background-size: cover;
+    }
+    .sayfalar-con {
+      text-decoration: none;
+    }
+    .sayfalar-con a {
+      color: #6C757D;
+      text-decoration: none;
+      list-style: none;
+      padding-left: 0px;
+    }
+    .sayfalar-con a:hover {
+      color: rgb(167, 255, 170);
+    }
+    .sosyal-svg {
+      text-decoration: none;
+    }
+    .sosyal-svg>svg {
+      width: 10% !important;
+      margin: 1rem;
+    }
+    @media only screen and (max-height: 768px) {
+      .main-row {
+        height: 110vh !important;
+      }
+    }
+    @media only screen and (max-height: 674px) {
+      .main-row {
+        height: 130vh !important;
+      }
+    }
+    @media only screen and (max-height: 519px) {
+      .main-row {
+        height: 150vh !important;
+      }
+    }
+    @media only screen and (max-height: 450px) {
+      .main-row {
+        height: 250vh !important;
+      }
+    }   
+    @media only screen and (max-width: 1199px) {
+      .main-row {
+        height: 150vh !important;
+      }
+      .main-row-con-1 {
+        height: 15% !important;
+      }
+      .footer-con {
+        padding: 50px !important;
+        margin-top: 15% !important;
+      }
+      .sayfalar-con {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      .main-row {
+        height: 300vh !important;
+      }
+      .main-row-con-1 {
+        height: 10% !important;
+      }
+      .caro-row {
+        padding-top: 0px !important;
+      }
+    }
+    @media only screen and (max-width: 389px) {
+      .nav-con {
+        display: none !important;
+      }
+      .sosyal-svg>svg {
+        width: 10% !important;
+        margin: .2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ana Sayfa -->
+  <div class="row col-12 m-0 p-0 main-row">
+    <!-- Üst Sayfa -->
+    <div class="row main-row-con-1 col-12 m-0 h-25">
+      <div class="container col-xxl-1 col-4 col-md-3 h-25 d-flex align-items-center menu ">
+        <button class="btn text-white fs-2 " type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+            x="0px" y="px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297; fill:white; width:40px"
+            xml:space="preserve">
+            <g>
+              <g>
+                <g>
+                  <path
+                    d="M279.368,24.726H102.992c-9.722,0-17.632,7.91-17.632,17.632V67.92c0,9.722,7.91,17.632,17.632,17.632h176.376     c9.722,0,17.632-7.91,17.632-17.632V42.358C297,32.636,289.09,24.726,279.368,24.726z" />
+                  <path
+                    d="M279.368,118.087H102.992c-9.722,0-17.632,7.91-17.632,17.632v25.562c0,9.722,7.91,17.632,17.632,17.632h176.376     c9.722,0,17.632-7.91,17.632-17.632v-25.562C297,125.997,289.09,118.087,279.368,118.087z" />
+                  <path
+                    d="M279.368,211.448H102.992c-9.722,0-17.632,7.91-17.632,17.633v25.561c0,9.722,7.91,17.632,17.632,17.632h176.376     c9.722,0,17.632-7.91,17.632-17.632v-25.561C297,219.358,289.09,211.448,279.368,211.448z" />
+                  <path
+                    d="M45.965,24.726H17.632C7.91,24.726,0,32.636,0,42.358V67.92c0,9.722,7.91,17.632,17.632,17.632h28.333     c9.722,0,17.632-7.91,17.632-17.632V42.358C63.597,32.636,55.687,24.726,45.965,24.726z" />
+                  <path
+                    d="M45.965,118.087H17.632C7.91,118.087,0,125.997,0,135.719v25.562c0,9.722,7.91,17.632,17.632,17.632h28.333     c9.722,0,17.632-7.91,17.632-17.632v-25.562C63.597,125.997,55.687,118.087,45.965,118.087z" />
+                  <path
+                    d="M45.965,211.448H17.632C7.91,211.448,0,219.358,0,229.081v25.561c0,9.722,7.91,17.632,17.632,17.632h28.333     c9.722,0,17.632-7.91,17.632-17.632v-25.561C63.597,219.358,55.687,211.448,45.965,211.448z" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+          aria-labelledby="staticBackdropLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">Menü</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <a class="col-3 can-con-link d-flex align-items-center" href="">Ana Sayfa</a>
+              <a class="col-3 can-con-link d-flex align-items-center " href="">Haberler</a>
+              <a class="col-3 can-con-link d-flex align-items-center " href="">Video</a>
+              <a class="col-3 can-con-link d-flex align-items-center " href="">Kategoriler</a>
+              <div class="container can-ara-con  col-12 h-25 d-flex ">
+                <input class="col-10 h-100" id="search" type="text" placeholder="Ara">
+                <a class="col-2" href="">
+                  <div class=" buton h-100  d-flex align-items-center justify-content-center ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                      id="Layer_1" x="0px" y="0px" viewBox="0 0 485.6 485.6"
+                      style="enable-background:new 0 0 485.6 485.6; width: 20px; height: 20px;" xml:space="preserve">
+                      <g>
+                        <g>
+                          <path style="fill:#E64C3D;"
+                            d="M447.5,477.85l30.3-30.3c4-4,4-10.4,0-14.4l-149.2-149.2l-44.7,44.7l149.2,149.2    C437.1,481.85,443.5,481.85,447.5,477.85z" />
+                          <path style="fill:#2C2F33;"
+                            d="M163.4,67.05c-53.2,0-96.5,43.3-96.5,96.5c0,5,4.1,9.1,9.1,9.1s9.1-4.1,9.1-9.1    c0-43.2,35.1-78.3,78.3-78.3c5,0,9.1-4.1,9.1-9.1C172.5,71.05,168.4,67.05,163.4,67.05z" />
+                          <path style="fill:#2C2F33;"
+                            d="M335,277.55c-3.5-3.5-9.3-3.5-12.8,0l-15.9,15.9l-21.1-21.1c25.9-28.9,41.7-67.1,41.7-108.9    c0-90.1-73.3-163.4-163.4-163.4S0,73.35,0,163.45s73.3,163.4,163.4,163.4c41.8,0,79.9-15.8,108.9-41.7l21.1,21.1l-15.9,15.9    c-1.7,1.7-2.7,4-2.7,6.4s1,4.7,2.7,6.4l141.9,141.9c5.6,5.6,13,8.7,20.9,8.7s15.3-3.1,20.9-8.7l15.7-15.7c5.6-5.6,8.7-13,8.7-20.9    s-3.1-15.3-8.7-20.9L335,277.55z M18.2,163.45c0-80.1,65.2-145.3,145.3-145.3s145.3,65.2,145.3,145.3s-65.2,145.3-145.3,145.3    S18.2,243.55,18.2,163.45z M464.1,448.45l-15.7,15.7c-2.2,2.2-5,3.4-8.1,3.4s-5.9-1.2-8.1-3.4l-135.5-135.5l31.9-31.9l135.5,135.5    c2.2,2.2,3.4,5,3.4,8.1S466.2,446.35,464.1,448.45z" />
+                        </g>
+                      </g>
+
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container col-xxl-2 col-8 col-md-3 h-25  logo"> <svg xmlns="http://www.w3.org/2000/svg"
+          style="height: 100%;" id="Layer_1" viewBox="0 0 540.3 88.7" width="170" height="410">
+          <style>
+            .st0 {
+              fill: #4a3866
+            }
+
+            .st1 {
+              fill: #ff2753
+            }
+
+            .st2 {
+              fill: #fff
+            }
+
+            .st3 {
+              fill: #ffdd5a
+            }
+          </style>
+          <path class="st0" d="M51.9 81.9s-2.4 4.3 1.3 5.3c5.4 1.4 7.3-7.5 7.3-7.5l-8.6 2.2z" />
+          <path class="st0" d="M52.8 82.1s-3.6 8-8.7 6.4c-5.1-1.6 1.4-7 1.4-7l7.3.6z" />
+          <path class="st0" d="M46.2 81S39 91.8 34.4 87.2c-2.6-2.6 1.9-8.7 1.9-8.7l9.9 2.5z" />
+          <path class="st1"
+            d="M49.8 0C27.1 0 8.7 18.4 8.7 41.2c0 3.2.4 6.4 1.1 9.4-3 1.7-6.8 5-7 10.5h6.7s-8.1 4.6-8.4 11.6l6.1-1.4S.4 77.9.1 84.8l21-14.2c7.4 7.3 17.6 11.8 28.8 11.8C72.6 82.4 91 63.9 91 41.2 91 18.4 72.6 0 49.8 0z" />
+          <path class="st2" d="M41.7 72.1l31.3-54S55.7 3.8 41.7 15.6c-16 13.5-13.3 46.2 0 56.5z" />
+          <path class="st0" d="M60 28.1c0 5.2-4.2 9.5-9.5 9.5S41 33.4 41 28.1c0-5.2 4.2-9.5 9.5-9.5s9.5 4.3 9.5 9.5z" />
+          <path class="st3" d="M60 56.4l30.3 25.1s36.1-48.6-10-61.1L60 56.4z" />
+          <path class="st2" d="M94.3 37.6s8.5 6.6 1.8 15.4c.7-7.7-1.8-15.4-1.8-15.4z" />
+          <g>
+            <path class="st0"
+              d="M142.8 26v48h-10.4V21h5.4c2.7-.1 5 2.3 5 5zM185.8 53.5c0 14.2-6.3 21.4-18.8 21.4s-18.7-7.2-18.7-21.4c0-14.4 6.2-21.4 18.7-21.4s18.8 7.1 18.8 21.4zm-27 0c.1 8 2.8 12.1 8.1 12.1s8-4.2 8-12.4c0-8-2.7-12-8-12s-8.1 4.1-8.1 12.3zM192 52.7c.3-13.3 7.4-20 21.2-20h1.5v10.8h-3.5c-5.8 0-8.7 3-8.7 9V74H192V52.7zM239.1 74.9c-12.5-.4-18.7-7.6-18.7-21.7 0-14 6.3-21.1 18.9-21.1 13.1 0 19.3 8 18.5 24.2h-26.7c.4 6.3 3.1 9.5 8.2 9.5 2.4 0 4.7-1 6.7-3 .9-1 2.1-1.5 3.5-1.5h7.6c-2.3 8.8-7.9 13.6-18 13.6zm-7.9-26h15.5c-.6-5.5-3.2-8.3-7.6-8.3s-7.1 2.8-7.9 8.3zM274.3 47.6V74h-10.5V49.7c0-11.8 5.9-17.6 17.7-17.6 5.3 0 9.4 1.2 12.3 3.5 3-2.3 7-3.4 12.3-3.4 11.8 0 17.6 5.8 17.5 17.6v24.3h-5.4c-3.4-.2-5.1-1.9-5.1-5.1V47.8c-.2-4.3-2.6-6.4-7.2-6.4s-6.9 2.1-7 6.4V74h-10.5V47.6c-.2-4.3-2.6-6.4-7.2-6.4-4.5 0-6.9 2.1-6.9 6.4zM359.5 26v48h-10.4V21h5.4c2.7-.1 5 2.3 5 5zM402.5 53.5c0 14.2-6.3 21.4-18.8 21.4S365 67.7 365 53.5c0-14.4 6.2-21.4 18.7-21.4s18.8 7.1 18.8 21.4zm-26.9 0c.1 8 2.8 12.1 8.1 12.1s8-4.2 8-12.4c0-8-2.7-12-8-12-5.4 0-8.1 4.1-8.1 12.3zM408.7 52.7c.3-13.3 7.4-20 21.2-20h1.5v10.8h-3.5c-5.8 0-8.7 3-8.7 9V74h-10.5V52.7zM455.8 74.9c-12.5-.4-18.7-7.6-18.7-21.7 0-14 6.3-21.1 18.9-21.1 13.1 0 19.3 8 18.5 24.2h-26.7c.4 6.3 3.1 9.5 8.2 9.5 2.4 0 4.7-1 6.7-3 .9-1 2.1-1.5 3.5-1.5h7.6c-2.2 8.8-7.9 13.6-18 13.6zm-7.9-26h15.5c-.6-5.5-3.2-8.3-7.6-8.3-4.4 0-7.1 2.8-7.9 8.3zM491 47.6V74h-10.5V49.7c0-11.8 5.9-17.6 17.7-17.6 5.3 0 9.4 1.2 12.3 3.5 3-2.3 7-3.4 12.3-3.4 11.8 0 17.6 5.8 17.5 17.6v24.3H535c-3.4-.2-5.1-1.9-5.1-5.1V47.8c-.2-4.3-2.6-6.4-7.2-6.4s-6.9 2.1-7 6.4V74h-10.5V47.6c-.2-4.3-2.6-6.4-7.2-6.4s-7 2.1-7 6.4z" />
+          </g>
+        </svg>
+      </div>
+      <div class="container nav-con col-xxl-4 col-12 col-md-6 h-25 d-flex justify-content-between">
+        <a class="col-3 nav-con-link d-flex align-items-center justify-content-center" href="">Ana Sayfa</a>
+        <a class="col-3 d-flex align-items-center justify-content-center" href="">Haberler</a>
+        <a class="col-3 d-flex align-items-center justify-content-center" href="">Video</a>
+        <a class="col-3 d-flex align-items-center justify-content-center" href="">Kategoriler</a>
+      </div>
+      <div class="container ara-con col-12 col-md-8 col-xxl-4 h-25  d-flex ">
+        <input class="col-10 h-100" id="search" type="text" placeholder=" Ara...">
+        <a class="col-2" href="">
+          <div class=" buton h-100  d-flex align-items-center justify-content-center ">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+              id="Layer_1" x="0px" y="0px" viewBox="0 0 485.6 485.6"
+              style="enable-background:new 0 0 485.6 485.6; width: 20px; height: 20px;" xml:space="preserve">
+              <g>
+                <g>
+                  <path style="fill:#E64C3D;"
+                    d="M447.5,477.85l30.3-30.3c4-4,4-10.4,0-14.4l-149.2-149.2l-44.7,44.7l149.2,149.2    C437.1,481.85,443.5,481.85,447.5,477.85z" />
+                  <path style="fill:#2C2F33;"
+                    d="M163.4,67.05c-53.2,0-96.5,43.3-96.5,96.5c0,5,4.1,9.1,9.1,9.1s9.1-4.1,9.1-9.1    c0-43.2,35.1-78.3,78.3-78.3c5,0,9.1-4.1,9.1-9.1C172.5,71.05,168.4,67.05,163.4,67.05z" />
+                  <path style="fill:#2C2F33;"
+                    d="M335,277.55c-3.5-3.5-9.3-3.5-12.8,0l-15.9,15.9l-21.1-21.1c25.9-28.9,41.7-67.1,41.7-108.9    c0-90.1-73.3-163.4-163.4-163.4S0,73.35,0,163.45s73.3,163.4,163.4,163.4c41.8,0,79.9-15.8,108.9-41.7l21.1,21.1l-15.9,15.9    c-1.7,1.7-2.7,4-2.7,6.4s1,4.7,2.7,6.4l141.9,141.9c5.6,5.6,13,8.7,20.9,8.7s15.3-3.1,20.9-8.7l15.7-15.7c5.6-5.6,8.7-13,8.7-20.9    s-3.1-15.3-8.7-20.9L335,277.55z M18.2,163.45c0-80.1,65.2-145.3,145.3-145.3s145.3,65.2,145.3,145.3s-65.2,145.3-145.3,145.3    S18.2,243.55,18.2,163.45z M464.1,448.45l-15.7,15.7c-2.2,2.2-5,3.4-8.1,3.4s-5.9-1.2-8.1-3.4l-135.5-135.5l31.9-31.9l135.5,135.5    c2.2,2.2,3.4,5,3.4,8.1S466.2,446.35,464.1,448.45z" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div class="container col-12 col-md-8 col-xxl-1 h-25 giris ">
+        <div class="buton-giris h-100 fs-5 text-white border d-flex align-items-center justify-content-center  ">
+          Giriş Yap
+        </div>
+      </div>
+    </div>
+    <!-- Alt Sayfa Haberler -->
+    <div class="row main-row-con-2 col-12 m-0 p-0 h-75">
+      <div id="carouselExampleControls" class="carousel slide " data-bs-ride="false" data-bs-interval="90000">
+        <div class="carousel-inner h-100 ">
+          <!-- Carousel 1. Sayfa -->
+          <div class="carousel-item h-100 active ">
+            <div class="row caro-row h-100 col-12 m-0 p-0 pb-3 d-flex justify-content-center">
+              <!-- Carousel 1.Sayfa -->
+              <div class="row caro-row-1  my-1 col-11">
+                <!-- Carousel 1.Sayfa Kart - 1  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img1.webp" class="img-fluid w-75 " alt="...">
+                        <div class="svg-con ms-1">
+                          <a href="" title="Mobil Uygulama"><svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                              viewBox="0 0 425 425" style="enable-background:new 0 0 425 425;" xml:space="preserve">
+                              <g>
+                                <path style="fill:#37495E;"
+                                  d="M334.013,425H90.987C62.828,425,40,402.172,40,374.013V50.987C40,22.828,62.828,0,90.987,0h243.026   C362.172,0,385,22.828,385,50.987v323.026C385,402.172,362.172,425,334.013,425z" />
+                                <path style="fill:#EFEFEF;"
+                                  d="M90.986,385C84.929,385,80,380.071,80,374.014V50.986C80,44.929,84.929,40,90.986,40h243.027   C340.071,40,345,44.929,345,50.986v323.027c0,6.058-4.929,10.986-10.986,10.986H90.986V385z" />
+                                <polygon style="fill:#F8A805;"
+                                  points="267.5,179.5 267.5,144.5 157.5,144.5 157.5,179.5 195,179.5 195,316 157.5,316 157.5,351    267.5,351 267.5,316 230,316 230,179.5  " />
+                                <circle style="fill:#F8A805;" cx="212.5" cy="93" r="22.5" />
+                              </g>
+                            </svg></i></a>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Microsoft, DALL-E Benzeri Yapay Zekâ Aracını Tanıttı: Peki Bu Yapay
+                            Zekâlar Ne Kadar Etik?</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Carousel 1.Sayfa Kart - 2  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img2.webp" class="img-fluid w-75" alt="...">
+                        <div class="svg-con ms-1">
+                          <a href="" title="Mobil Uygulama"><svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                              viewBox="0 0 425 425" style="enable-background:new 0 0 425 425;" xml:space="preserve">
+                              <g>
+                                <path style="fill:#37495E;"
+                                  d="M334.013,425H90.987C62.828,425,40,402.172,40,374.013V50.987C40,22.828,62.828,0,90.987,0h243.026   C362.172,0,385,22.828,385,50.987v323.026C385,402.172,362.172,425,334.013,425z" />
+                                <path style="fill:#EFEFEF;"
+                                  d="M90.986,385C84.929,385,80,380.071,80,374.014V50.986C80,44.929,84.929,40,90.986,40h243.027   C340.071,40,345,44.929,345,50.986v323.027c0,6.058-4.929,10.986-10.986,10.986H90.986V385z" />
+                                <polygon style="fill:#F8A805;"
+                                  points="267.5,179.5 267.5,144.5 157.5,144.5 157.5,179.5 195,179.5 195,316 157.5,316 157.5,351    267.5,351 267.5,316 230,316 230,179.5  " />
+                                <circle style="fill:#F8A805;" cx="212.5" cy="93" r="22.5" />
+                              </g>
+                            </svg></i></a>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Steam Mobil Uygulaması Baştan Aşağı Yenilendi: İşte Oyuncuların Keyfini
+                            Yerine Getirecek Yepyeni Özellikler...</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Carousel 1.Sayfa  Kart - 3  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97% ">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img3.jpg" class="img-fluid w-75 " alt="...">
+                        <div class="svg-con ms-1">
+                          <a href="" title="Mobil Uygulama"><svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                              viewBox="0 0 425 425" style="enable-background:new 0 0 425 425;" xml:space="preserve">
+                              <g>
+                                <path style="fill:#37495E;"
+                                  d="M334.013,425H90.987C62.828,425,40,402.172,40,374.013V50.987C40,22.828,62.828,0,90.987,0h243.026   C362.172,0,385,22.828,385,50.987v323.026C385,402.172,362.172,425,334.013,425z" />
+                                <path style="fill:#EFEFEF;"
+                                  d="M90.986,385C84.929,385,80,380.071,80,374.014V50.986C80,44.929,84.929,40,90.986,40h243.027   C340.071,40,345,44.929,345,50.986v323.027c0,6.058-4.929,10.986-10.986,10.986H90.986V385z" />
+                                <polygon style="fill:#F8A805;"
+                                  points="267.5,179.5 267.5,144.5 157.5,144.5 157.5,179.5 195,179.5 195,316 157.5,316 157.5,351    267.5,351 267.5,316 230,316 230,179.5  " />
+                                <circle style="fill:#F8A805;" cx="212.5" cy="93" r="22.5" />
+                              </g>
+                            </svg></i></a>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Google'ın Tottenham Stadına Sponsor Olacağı İddia Edildi: "Yeni Adı
+                            Google Stadyumu Olacak!"</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- Carousel 1.Sayfa  Kart - 4 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img4.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Bazıları 4G Telefonlardan Bile Ucuz: İşte Türkiye'deki En Ucuz 5G
+                            Destekli Telefonlar...</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 1.Sayfa - 5 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img5.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Snapchat Hesabı Nasıl Silinir ya da Dondurulur?</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 1.Sayfa  Kart - 6 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img6.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Dünya’nın İkizi Olan Venüs’ü Keşfedecek “Uzay Balonu” Test Edildi: E’
+                            Bu Bildiğin Alüminyum Folyo(!)</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel 2.Sayfa  -->
+          <div class="carousel-item h-100">
+            <div class="row caro-row h-100 col-12 m-0 p-0 pb-3 d-flex justify-content-center">
+              <!-- Carousel 2.Sayfa -->
+              <div class="row caro-row-1 my-1 col-11  ">
+                <!-- Carousel 2.Sayfa Kart - 1  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img7.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Aşı Karşıtları Yine İş Başında: Peki Pfizer Aşısı Hakkındaki 'Test
+                            Edilmedi' İddiası Doğru mu?</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Carousel 2.Sayfa Kart - 2  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97% ">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img8.webp" class="img-fluid w-75" alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Apple Music Nihayet Xbox Konsollarına Geldi!</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Carousel 2.Sayfa  Kart - 3  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img9.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Sadece 'Marshmallow' Kullanılarak Çocukların Sabrının Sınandığı,
+                            Sonuçlarıyla Ters Köşe Yaptıran Psikolojik Deney</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 2.Sayfa  Kart - 4 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img10.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Laboratuvar Ortamında Yetiştirilen Beyin Hücreleri Oyun Oynamayı
+                            Öğrendi [Video]</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 2.Sayfa Kart - 5 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img11.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Tesla'dan Sonra BMW de Otomobillerine Oyun Oynama Özelliği Getiriyor!
+                          </h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 2.Sayfa  Kart - 6 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img12.jpg" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Çoğumuzun Alacakaranlık Serisiyle Hatırladığı Kristen Stewart’ın Yer
+                            Aldığı En İyi 10 Film</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel 3.Sayfa -->
+          <div class="carousel-item h-100 ">
+            <div class="row caro-row h-100 col-12 m-0 p-0 pb-3 d-flex justify-content-center">
+              <!-- Carousel 3.Sayfa -->
+              <div class="row caro-row-1 my-1 col-11  ">
+                <!-- Carousel 3.Sayfa Kart - 1  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img13.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Metaverse'e Her Şeyini Yatıran Mark Zuckerberg, Apple'ı Hedef Aldı: "VR
+                            Platformlarına Zarar Verecek"</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Carousel 3.Sayfa Kart - 2  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img14.webp" class="img-fluid w-75" alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Gazi Üniversitesi’nde İlki Gerçekleşecek “TedxGaziUniversity” 5
+                            Kasım’da Sizlerle!</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Carousel 3.Sayfa  Kart - 3  -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img15.jpg" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Elon Musk, En Başından Beri Twitter'la Oyun Oynuyormuş! İşte Musk'ın
+                            Ortaya Çıkan Mesajlaşmaları</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 3.Sayfa  Kart - 4 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img16.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Beynimiz Ağrıyı ve Acıyı Hissedememesine Rağmen Nasıl Oluyor da Başımız
+                            Ağrıyor?</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 3.Sayfa Kart - 5 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img17.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Windows Kullanan iPhone Sahipleri Toplanın: Windows 11’in Fotoğraflar
+                            Uygulamasına iCloud Desteği Geliyor!</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel 3.Sayfa  Kart - 6 -->
+                <div
+                  class="container caro-img-con col-12 col-lg-6 col-xl-4 my-1 d-flex justify-content-center align-items-center">
+                  <div class="card " style="max-width: 400px; height: 97%">
+                    <div class="row g-0">
+                      <div class="col-md-12 d-flex align-items-center">
+                        <img src="images/img18.webp" class="img-fluid w-75 " alt="...">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Doğuştan Gelen Körlüğün Yetişkinlikte de Tedavi Edilebileceği Ortaya
+                            Çıktı!</h5>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Butonlar -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="row footer-con mt-5 py-5 text-secondary d-flex justify-content-center align-items-center">
+
+    <div class="container  text-secondary sayfalar-con col-12 col-lg-3 ">
+      <h5>Sayfalar</h5>
+      <hr>
+      <a href="">
+        <li>Hakkımızda</li>
+      </a>
+      <a href="">
+        <li>Ana Sayfa</li>
+      </a>
+      <a href="">
+        <li>Haberler</li>
+      </a>
+      <a href="">
+        <li>Video Haberler</li>
+      </a>
+      <a href="">
+        <li>Kategoriler</li>
+      </a>
+
+    </div>
+    <div class="container col-12 col-lg-3 text-center    ">
+      <h5>Sosyal Medya Hesaplarımız</h5>
+      <br>
+
+      <a class="sosyal-svg" href="">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+          x="0px" y="0px" viewBox="0 0 410.155 410.155" style="enable-background:new 0 0 410.155 410.155;"
+          xml:space="preserve">
+          <path style="fill:#76A9EA;"
+            d="M403.632,74.18c-9.113,4.041-18.573,7.229-28.28,9.537c10.696-10.164,18.738-22.877,23.275-37.067  l0,0c1.295-4.051-3.105-7.554-6.763-5.385l0,0c-13.504,8.01-28.05,14.019-43.235,17.862c-0.881,0.223-1.79,0.336-2.702,0.336  c-2.766,0-5.455-1.027-7.57-2.891c-16.156-14.239-36.935-22.081-58.508-22.081c-9.335,0-18.76,1.455-28.014,4.325  c-28.672,8.893-50.795,32.544-57.736,61.724c-2.604,10.945-3.309,21.9-2.097,32.56c0.139,1.225-0.44,2.08-0.797,2.481  c-0.627,0.703-1.516,1.106-2.439,1.106c-0.103,0-0.209-0.005-0.314-0.015c-62.762-5.831-119.358-36.068-159.363-85.14l0,0  c-2.04-2.503-5.952-2.196-7.578,0.593l0,0C13.677,65.565,9.537,80.937,9.537,96.579c0,23.972,9.631,46.563,26.36,63.032  c-7.035-1.668-13.844-4.295-20.169-7.808l0,0c-3.06-1.7-6.825,0.485-6.868,3.985l0,0c-0.438,35.612,20.412,67.3,51.646,81.569  c-0.629,0.015-1.258,0.022-1.888,0.022c-4.951,0-9.964-0.478-14.898-1.421l0,0c-3.446-0.658-6.341,2.611-5.271,5.952l0,0  c10.138,31.651,37.39,54.981,70.002,60.278c-27.066,18.169-58.585,27.753-91.39,27.753l-10.227-0.006  c-3.151,0-5.816,2.054-6.619,5.106c-0.791,3.006,0.666,6.177,3.353,7.74c36.966,21.513,79.131,32.883,121.955,32.883  c37.485,0,72.549-7.439,104.219-22.109c29.033-13.449,54.689-32.674,76.255-57.141c20.09-22.792,35.8-49.103,46.692-78.201  c10.383-27.737,15.871-57.333,15.871-85.589v-1.346c-0.001-4.537,2.051-8.806,5.631-11.712c13.585-11.03,25.415-24.014,35.16-38.591  l0,0C411.924,77.126,407.866,72.302,403.632,74.18L403.632,74.18z" />
+
+        </svg>
+      </a>
+      <a class="sosyal-svg" href="">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+          x="0px" y="0px" viewBox="0 0 551.034 551.034" style="enable-background:new 0 0 551.034 551.034;"
+          xml:space="preserve">
+          <g id="XMLID_13_">
+
+            <linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517"
+              y2="549.7202" gradientTransform="matrix(1 0 0 -1 0 554)">
+              <stop offset="0" style="stop-color:#E09B3D" />
+              <stop offset="0.3" style="stop-color:#C74C4D" />
+              <stop offset="0.6" style="stop-color:#C21975" />
+              <stop offset="1" style="stop-color:#7024C4" />
+            </linearGradient>
+            <path id="XMLID_17_" style="fill:url(#XMLID_2_);"
+              d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z" />
+
+            <linearGradient id="XMLID_3_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517"
+              y2="549.7202" gradientTransform="matrix(1 0 0 -1 0 554)">
+              <stop offset="0" style="stop-color:#E09B3D" />
+              <stop offset="0.3" style="stop-color:#C74C4D" />
+              <stop offset="0.6" style="stop-color:#C21975" />
+              <stop offset="1" style="stop-color:#7024C4" />
+            </linearGradient>
+            <path id="XMLID_81_" style="fill:url(#XMLID_3_);"
+              d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z" />
+
+            <linearGradient id="XMLID_4_" gradientUnits="userSpaceOnUse" x1="418.306" y1="4.5714" x2="418.306"
+              y2="549.7202" gradientTransform="matrix(1 0 0 -1 0 554)">
+              <stop offset="0" style="stop-color:#E09B3D" />
+              <stop offset="0.3" style="stop-color:#C74C4D" />
+              <stop offset="0.6" style="stop-color:#C21975" />
+              <stop offset="1" style="stop-color:#7024C4" />
+            </linearGradient>
+            <circle id="XMLID_83_" style="fill:url(#XMLID_4_);" cx="418.306" cy="134.072" r="34.149" />
+          </g>
+
+        </svg>
+      </a>
+      <a class="sosyal-svg " href="">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+          x="0px" y="0px" viewBox="0 0 461.001 461.001" style="enable-background:new 0 0 461.001 461.001;"
+          xml:space="preserve">
+          <g>
+            <path style="fill:#F61C0D;"
+              d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z" />
+          </g>
+        </svg>
+      </a>
+      <a class="sosyal-svg" href="">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+          x="0px" y="0px" viewBox="0 0 408.788 408.788" style="enable-background:new 0 0 408.788 408.788;"
+          xml:space="preserve">
+          <path style="fill:#475993;"
+            d="M353.701,0H55.087C24.665,0,0.002,24.662,0.002,55.085v298.616c0,30.423,24.662,55.085,55.085,55.085  h147.275l0.251-146.078h-37.951c-4.932,0-8.935-3.988-8.954-8.92l-0.182-47.087c-0.019-4.959,3.996-8.989,8.955-8.989h37.882  v-45.498c0-52.8,32.247-81.55,79.348-81.55h38.65c4.945,0,8.955,4.009,8.955,8.955v39.704c0,4.944-4.007,8.952-8.95,8.955  l-23.719,0.011c-25.615,0-30.575,12.172-30.575,30.035v39.389h56.285c5.363,0,9.524,4.683,8.892,10.009l-5.581,47.087  c-0.534,4.506-4.355,7.901-8.892,7.901h-50.453l-0.251,146.078h87.631c30.422,0,55.084-24.662,55.084-55.084V55.085  C408.786,24.662,384.124,0,353.701,0z" />
+        </svg>
+      </a>
+    </div>
+    <div class="container col-12 col-lg-3  ">
+      <h5>İletişim</h5>
+      <hr>
+      <p>Telefon: 0512 345 67 89</p>
+      <p>Adres: Lorem Mah. İpsum Cad. Dolor Sok. No:1 ANKARA </p>
+      <p>E-mail: example@loremmail.com</p>
+    </div>
+  </div>
+  <div class="row bg-black text-secondary"><span class="d-flex justify-content-center align-items-center"><a class="text-decoration-none text-secondary" href="https://github.com/ysfdr" target="_blank"> - by ysfdr
+      -</a></span></div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+</body>
+</html>
